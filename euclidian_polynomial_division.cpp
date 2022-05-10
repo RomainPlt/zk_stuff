@@ -6,8 +6,12 @@ int get_degree() {
     std::cout << "Enter the degree of the two polynomials : \n";
     std::cin >> q;
     std::cin >> p;
-    std::cout << "Your degrees are : " << q << " and " << p << " ! \n";
+    std::cout << "Your degrees are : " << q << " and " << p << " ! \n   ";
     return q,p;
+}
+
+void create_polynomials(int q, int p) {
+
 }
 
 int main() {
