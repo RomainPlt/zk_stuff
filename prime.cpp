@@ -1,16 +1,11 @@
- #include <iostream>
-//  #include "cryptopp860/cryptlib.h"
-//  #include "cryptopp860/integer.h"
-//  #include "cryptopp860/osrng.h"
-//  #include "cryptopp860/algparam.h"
+#include <iostream>
 #include <gmp.h>
 #include <tgmath.h>
- using namespace std;
-//  using namespace CryptoPP;
+using namespace std;
 
-class BivPoly_Com {
+class Prime {
     private:
-        const int secure_lambda_param = 1024;
+        int n_bytes;
         mpz_t q;
         
     public:
@@ -27,7 +22,7 @@ class BivPoly_Com {
             gmp_randstate_t state;
             gmp_randinit_default(state);
             gmp_randseed_ui(state, time(NULL));
-            mp_bitcnt_t n = secure_lambda_param;
+            mp_bitcnt_t n = n_bytes;
 
             mpz_urandomb(prime, state, n);
             gmp_printf("1) Initial number is : %Zd\n", prime);
@@ -44,40 +39,3 @@ class BivPoly_Com {
 
       
 };
-
-
-
-int main() {
-    mpz_t prime;
-    mpz_init(prime);
-    BivPoly_Com com;
-    com.get_random_int_in_range(prime);
-    com.generate_bytes_len_primes(prime, prime);
-    com.set_q(prime);
-    com.print_stuff();
-    return 0;
-}
-
-/*
-
-int generator(int lambda) {
-
-}
-
-class Biv_ComGen {
-
-}
-
-class Biv_Com {
-
-}
-
-class Biv_ComVer {
-
-}
-
-class Biv_OpenVer {
-
-}
-
-*/
