@@ -9,10 +9,16 @@ class Prime {
         mpz_t q;
         
     public:
+
+        void set_bytes(int b){
+            n_bytes = b;
+        }
+        
+        int get_bytes(){
+            return n_bytes;
+        }
+
         void generate_bytes_len_primes(mpz_t prime, mpz_t num){
-            // mpz_t x;
-            // mp_bitcnt_t b = bytes;
-            // mpz_init (x);
             mpz_nextprime(prime, num);
             gmp_printf("2) We get the prime : %Zd \n", prime);
             gmp_printf("   Size in bits : %d \n", mpz_sizeinbase(prime, 2));
@@ -39,3 +45,4 @@ class Prime {
 
       
 };
+

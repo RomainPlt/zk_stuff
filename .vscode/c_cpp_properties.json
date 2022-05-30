@@ -4,6 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/pbc-0.5.14/include/",
                 "/usr/lib"
             ],
             "defines": [],
